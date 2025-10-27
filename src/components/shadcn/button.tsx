@@ -16,7 +16,7 @@ const buttonVariants = cva(
 					"bg-secondary text-neutral-90 hover:bg-secondary-hover focus-visible:border-secondary-border focus-visible:bg-secondary-focused focus-visible:text-secondary focus-visible:ring-secondary-border aria-pressed:bg-secondary-pressed",
 			},
 			size: {
-				default: "h-9 text-md",
+				default: "h-9 text-base",
 				sm: "h-8 text-sm",
 				lg: "h-10 py-1.5 text-lg",
 				icon: "size-9",
