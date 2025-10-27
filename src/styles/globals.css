@@ -1,9 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
+
 @import "tailwindcss";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
 @theme {
+    --font-sans: "Nunito Sans", sans-serif;
+
     --text-xs: 10px;
     --text-xs--line-height: 16px;
 
@@ -27,6 +31,10 @@
 
     --text-display: 20px;
     --text-display--line-height: 32px;
+
+    --shadow-input: 1px 2px 2px 0px #0000001f inset;
+    --shadow-button: 0px 1px 2px 0px #0000001f;
+    --shadow-modal: 0px 4px 8px 0px #0000001a;
 }
 
 @theme inline {
@@ -148,9 +156,9 @@
 
 @layer base {
     * {
-        @apply border-border;
+        @apply border-border font-sans;
     }
     body {
-        @apply bg-background text-foreground text-base;
+        @apply bg-neutral-20 text-foreground text-base;
     }
 }
