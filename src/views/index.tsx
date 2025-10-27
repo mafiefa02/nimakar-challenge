@@ -1,5 +1,5 @@
-import { BellIcon } from "@heroicons/react/24/solid";
 import { Button } from "-/components/shadcn/button";
+import { BellIcon } from "lucide-react";
 
 export const Home = () => {
 	return (
