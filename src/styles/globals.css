@@ -88,6 +88,7 @@
     --color-border: var(--neutral-40);
     --color-input: var(--neutral-40);
     --color-ring: var(--neutral-60);
+    --color-disabled: var(--neutral-30);
 }
 
 :root {
