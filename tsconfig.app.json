@@ -10,7 +10,8 @@
 		],
 		"module": "ESNext",
 		"types": [
-			"vite/client"
+			"vite/client",
+			"node"
 		],
 		"baseUrl": ".",
 		"paths": {
@@ -30,7 +31,8 @@
 		"noUnusedParameters": true,
 		"erasableSyntaxOnly": true,
 		"noFallthroughCasesInSwitch": true,
-		"noUncheckedSideEffectImports": true
+		"noUncheckedSideEffectImports": true,
+		"exactOptionalPropertyTypes": true
 	},
 	"include": [
 		"src"

@@ -14,13 +14,17 @@
 		"preview": "vite preview"
 	},
 	"dependencies": {
+		"@hookform/resolvers": "^5.2.2",
 		"@tailwindcss/vite": "^4.1.16",
+		"arktype": "^2.1.23",
 		"class-variance-authority": "^0.7.1",
 		"clsx": "^2.1.1",
 		"lucide-react": "^0.548.0",
 		"radix-ui": "latest",
 		"react": "^19.1.1",
 		"react-dom": "^19.1.1",
+		"react-hook-form": "^7.65.0",
+		"react-icons": "^5.5.0",
 		"react-router": "^7.9.4",
 		"tailwind-merge": "^3.3.1",
 		"tailwindcss": "^4.1.16"

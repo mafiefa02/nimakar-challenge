@@ -4,7 +4,7 @@ import { Slot as SlotPrimitive } from "radix-ui";
 import * as React from "react";
 
 const buttonVariants = cva(
-	"inline-flex shrink-0 items-center justify-center gap-1 whitespace-nowrap rounded-md px-4 py-1 font-bold outline-none transition-all focus-visible:ring-2 disabled:pointer-events-none disabled:bg-disabled disabled:text-neutral-60 aria-invalid:border-destructive aria-invalid:ring-destructive/20 [&_svg:not([class*='size-'])]:size-4 [&_svg]:pointer-events-none [&_svg]:shrink-0",
+	"inline-flex shrink-0 items-center justify-center gap-1 whitespace-nowrap rounded-md px-4 py-1 font-bold outline-none transition-all focus-visible:ring-2 disabled:pointer-events-none disabled:bg-disabled disabled:text-neutral-60 has-[svg]:gap-2.5 aria-invalid:border-destructive aria-invalid:ring-destructive/20 [&_svg:not([class*='size-'])]:size-4 [&_svg]:pointer-events-none [&_svg]:shrink-0",
 	{
 		variants: {
 			variant: {

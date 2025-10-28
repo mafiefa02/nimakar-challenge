@@ -8,9 +8,15 @@ importers:
 
   .:
     dependencies:
+      '@hookform/resolvers':
+        specifier: ^5.2.2
+        version: 5.2.2(react-hook-form@7.65.0(react@19.2.0))
       '@tailwindcss/vite':
         specifier: ^4.1.16
         version: 4.1.16(vite@7.1.12(@types/node@24.9.1)(jiti@2.6.1)(lightningcss@1.30.2))
+      arktype:
+        specifier: ^2.1.23
+        version: 2.1.23
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
@@ -29,6 +35,12 @@ importers:
       react-dom:
         specifier: ^19.1.1
         version: 19.2.0(react@19.2.0)
+      react-hook-form:
+        specifier: ^7.65.0
+        version: 7.65.0(react@19.2.0)
+      react-icons:
+        specifier: ^5.5.0
+        version: 5.5.0(react@19.2.0)
       react-router:
         specifier: ^7.9.4
         version: 7.9.4(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
@@ -71,6 +83,15 @@ importers:
         version: 7.1.12(@types/node@24.9.1)(jiti@2.6.1)(lightningcss@1.30.2)
 
 packages:
+
+  '@ark/regex@0.0.0':
+    resolution: {integrity: sha512-p4vsWnd/LRGOdGQglbwOguIVhPmCAf5UzquvnDoxqhhPWTP84wWgi1INea8MgJ4SnI2gp37f13oA4Waz9vwNYg==}
+
+  '@ark/schema@0.50.0':
+    resolution: {integrity: sha512-hfmP82GltBZDadIOeR3argKNlYYyB2wyzHp0eeAqAOFBQguglMV/S7Ip2q007bRtKxIMLDqFY6tfPie1dtssaQ==}
+
+  '@ark/util@0.50.0':
+    resolution: {integrity: sha512-tIkgIMVRpkfXRQIEf0G2CJryZVtHVrqcWHMDa5QKo0OEEBu0tHkRSIMm4Ln8cd8Bn9TPZtvc/kE2Gma8RESPSg==}
 
   '@babel/code-frame@7.27.1':
     resolution: {integrity: sha512-cjQ7ZlQ0Mv3b47hABuTevyTuYN4i+loJKGeV9flcCgIK37cCXRh+L1bd3iBHlynerhQ7BhCkn2BPbQUL+rGqFg==}
@@ -378,6 +399,11 @@ packages:
 
   '@floating-ui/utils@0.2.10':
     resolution: {integrity: sha512-aGTxbpbg8/b5JfU1HXSrbH3wXZuLPJcNEcZQFMxLs3oSzgtVu6nFPkbbGGUvBcUjKV2YyB9Wxxabo+HEH9tcRQ==}
+
+  '@hookform/resolvers@5.2.2':
+    resolution: {integrity: sha512-A/IxlMLShx3KjV/HeTcTfaMxdwy690+L/ZADoeaTltLx+CVuzkeVIPuybK3jrRfw7YZnmdKsVVHAlEPIAEUNlA==}
+    peerDependencies:
+      react-hook-form: ^7.55.0
 
   '@jridgewell/gen-mapping@0.3.13':
     resolution: {integrity: sha512-2kkt/7niJ6MgEPxF0bYdQ6etZaA+fQvDcLKckhy1yIQOzaoKjBBjSj63/aLVjYE3qhRt5dvM+uUyfCg6UKCBbA==}
@@ -1198,6 +1224,9 @@ packages:
     cpu: [x64]
     os: [win32]
 
+  '@standard-schema/utils@0.3.0':
+    resolution: {integrity: sha512-e7Mew686owMaPJVNNLs55PUvgz371nKgwsc4vxE49zsODpJEnxgxRo2y/OKrqueavXgZNMDVj3DdHFlaSAeU8g==}
+
   '@tailwindcss/node@4.1.16':
     resolution: {integrity: sha512-BX5iaSsloNuvKNHRN3k2RcCuTEgASTo77mofW0vmeHkfrDWaoFAFvNHpEgtu0eqyypcyiBkDWzSMxJhp3AUVcw==}
 
@@ -1323,6 +1352,9 @@ packages:
   aria-hidden@1.2.6:
     resolution: {integrity: sha512-ik3ZgC9dY/lYVVM++OISsaYDeg1tb0VtP5uL3ouh1koGOaUMDPpbFIei4JkFimWUFPn90sbMNMXQAIVOlnYKJA==}
     engines: {node: '>=10'}
+
+  arktype@2.1.23:
+    resolution: {integrity: sha512-tyxNWX6xJVMb2EPJJ3OjgQS1G/vIeQRrZuY4DeBNQmh8n7geS+czgbauQWB6Pr+RXiOO8ChEey44XdmxsqGmfQ==}
 
   babel-plugin-react-compiler@19.1.0-rc.1-rc-af1b7da-20250421:
     resolution: {integrity: sha512-E3kaokBhWDLf7ZD8fuYjYn0ZJHYZ+3EHtAWCdX2hl4lpu1z9S/Xr99sxhx2bTCVB41oIesz9FtM8f4INsrZaOw==}
@@ -1606,6 +1638,17 @@ packages:
     peerDependencies:
       react: ^19.2.0
 
+  react-hook-form@7.65.0:
+    resolution: {integrity: sha512-xtOzDz063WcXvGWaHgLNrNzlsdFgtUWcb32E6WFaGTd7kPZG3EeDusjdZfUsPwKCKVXy1ZlntifaHZ4l8pAsmw==}
+    engines: {node: '>=18.0.0'}
+    peerDependencies:
+      react: ^16.8.0 || ^17 || ^18 || ^19
+
+  react-icons@5.5.0:
+    resolution: {integrity: sha512-MEFcXdkP3dLo8uumGI5xN3lDFNsRtrjbOEKDLD7yv76v4wpnEq2Lt2qeHaQOr34I/wPN3s3+N08WkQ+CW37Xiw==}
+    peerDependencies:
+      react: '*'
+
   react-refresh@0.18.0:
     resolution: {integrity: sha512-QgT5//D3jfjJb6Gsjxv0Slpj23ip+HtOpnNgnb2S5zU3CB26G/IDPGoy4RJB42wzFE46DRsstbW6tKHoKbhAxw==}
     engines: {node: '>=0.10.0'}
@@ -1776,6 +1819,16 @@ packages:
     resolution: {integrity: sha512-a4UGQaWPH59mOXUYnAG2ewncQS4i4F43Tv3JoAM+s2VDAmS9NsK8GpDMLrCHPksFT7h3K6TOoUNn2pb7RoXx4g==}
 
 snapshots:
+
+  '@ark/regex@0.0.0':
+    dependencies:
+      '@ark/util': 0.50.0
+
+  '@ark/schema@0.50.0':
+    dependencies:
+      '@ark/util': 0.50.0
+
+  '@ark/util@0.50.0': {}
 
   '@babel/code-frame@7.27.1':
     dependencies:
@@ -2018,6 +2071,11 @@ snapshots:
       react-dom: 19.2.0(react@19.2.0)
 
   '@floating-ui/utils@0.2.10': {}
+
+  '@hookform/resolvers@5.2.2(react-hook-form@7.65.0(react@19.2.0))':
+    dependencies:
+      '@standard-schema/utils': 0.3.0
+      react-hook-form: 7.65.0(react@19.2.0)
 
   '@jridgewell/gen-mapping@0.3.13':
     dependencies:
@@ -2853,6 +2911,8 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.52.5':
     optional: true
 
+  '@standard-schema/utils@0.3.0': {}
+
   '@tailwindcss/node@4.1.16':
     dependencies:
       '@jridgewell/remapping': 2.3.5
@@ -2971,6 +3031,12 @@ snapshots:
   aria-hidden@1.2.6:
     dependencies:
       tslib: 2.8.1
+
+  arktype@2.1.23:
+    dependencies:
+      '@ark/regex': 0.0.0
+      '@ark/schema': 0.50.0
+      '@ark/util': 0.50.0
 
   babel-plugin-react-compiler@19.1.0-rc.1-rc-af1b7da-20250421:
     dependencies:
@@ -3254,6 +3320,14 @@ snapshots:
     dependencies:
       react: 19.2.0
       scheduler: 0.27.0
+
+  react-hook-form@7.65.0(react@19.2.0):
+    dependencies:
+      react: 19.2.0
+
+  react-icons@5.5.0(react@19.2.0):
+    dependencies:
+      react: 19.2.0
 
   react-refresh@0.18.0: {}
 
