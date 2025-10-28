@@ -1,6 +1,5 @@
 import { AuthErrorHandler } from "-/components/auth-error-handler";
-import { GoogleIcon } from "-/components/icons/google-icon";
-import { Button } from "-/components/shadcn/button";
+import { LoginWithGoogleButton } from "-/components/login-with-google-button";
 import {
 	Card,
 	CardContent,
@@ -28,9 +27,7 @@ export const LoginAccountLayout = () => {
 			<CardContent className="flex w-full flex-col gap-4">
 				<AuthErrorHandler />
 				<Outlet />
-				<Button variant="outline">
-					<GoogleIcon /> Masuk dengan Google
-				</Button>
+				<LoginWithGoogleButton />
 			</CardContent>
 		</Card>
 	);

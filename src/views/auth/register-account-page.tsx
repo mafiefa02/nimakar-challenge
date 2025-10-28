@@ -1,7 +1,7 @@
 import { AuthErrorHandler } from "-/components/auth-error-handler";
 import { RegisterAccountFormFields } from "-/components/forms/register-account-form/register-account-form-fields";
 import { RegisterAccountFormProvider } from "-/components/forms/register-account-form/register-account-form-provider";
-import { GoogleIcon } from "-/components/icons/google-icon";
+import { RegisterWithGoogleButton } from "-/components/register-with-google-button";
 import { Button } from "-/components/shadcn/button";
 import {
 	Card,
@@ -50,9 +50,7 @@ export const RegisterAccountPage = () => {
 						orientation="horizontal"
 					/>
 				</div>
-				<Button variant="outline">
-					<GoogleIcon /> Daftar dengan Google
-				</Button>
+				<RegisterWithGoogleButton />
 			</CardContent>
 		</Card>
 	);
