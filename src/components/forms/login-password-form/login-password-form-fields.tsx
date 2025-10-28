@@ -5,6 +5,7 @@ import {
 	FieldLabel,
 } from "-/components/shadcn/field";
 import { Input } from "-/components/shadcn/input";
+import { AlertTriangleIcon } from "lucide-react";
 import { Controller, useFormContext } from "react-hook-form";
 import { loginPasswordFormId as formId } from "./login-password-form-schema";
 
@@ -26,11 +27,14 @@ export const LoginPasswordFormFields = () => {
 							type="email"
 						/>
 						{fieldState.invalid && (
-							<FieldError
-								errors={[
-									fieldState.error,
-								]}
-							/>
+							<div className="flex items-center gap-2">
+								<AlertTriangleIcon className="size-4" />
+								<FieldError
+									errors={[
+										fieldState.error,
+									]}
+								/>
+							</div>
 						)}
 					</Field>
 				)}
@@ -47,6 +51,16 @@ export const LoginPasswordFormFields = () => {
 							aria-invalid={fieldState.invalid}
 							type="password"
 						/>
+						{fieldState.invalid && (
+							<div className="flex items-center gap-2">
+								<AlertTriangleIcon className="size-4" />
+								<FieldError
+									errors={[
+										fieldState.error,
+									]}
+								/>
+							</div>
+						)}
 					</Field>
 				)}
 			/>

@@ -1,5 +1,6 @@
 import { Field, FieldError, FieldLabel } from "-/components/shadcn/field";
 import { Input } from "-/components/shadcn/input";
+import { AlertTriangleIcon } from "lucide-react";
 import { Controller, useFormContext } from "react-hook-form";
 import { loginMagicLinkFormId as formId } from "./login-magic-link-form-schema";
 
@@ -20,11 +21,14 @@ export const LoginMagicLinkFormFields = () => {
 						type="email"
 					/>
 					{fieldState.invalid && (
-						<FieldError
-							errors={[
-								fieldState.error,
-							]}
-						/>
+						<div className="flex items-center gap-2">
+							<AlertTriangleIcon className="size-4" />
+							<FieldError
+								errors={[
+									fieldState.error,
+								]}
+							/>
+						</div>
 					)}
 				</Field>
 			)}
