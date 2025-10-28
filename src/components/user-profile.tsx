@@ -1,12 +1,14 @@
 import defaultAvatar from "-/assets/default-avatar.png";
-import type { User } from "-/lib/types";
+import type { sessionLoader } from "-/loaders/session-loader";
+import { useLoaderData } from "react-router";
 import { Avatar, AvatarFallback, AvatarImage } from "./shadcn/avatar";
 
-export const UserProfile = ({ user }: { user: typeof User.infer }) => {
+export const UserProfile = () => {
+	const { user } = useLoaderData<typeof sessionLoader>();
 	return (
 		<Avatar>
-			<AvatarImage src={user.photoProfile ?? defaultAvatar} />
-			<AvatarFallback>{user.email[0]}</AvatarFallback>
+			<AvatarImage src={user.get("photoProfile") ?? defaultAvatar} />
+			<AvatarFallback>{user.get("email")[0]}</AvatarFallback>
 		</Avatar>
 	);
 };

@@ -7,10 +7,17 @@ export const Header = ({
 }: React.ComponentPropsWithoutRef<"header">) => {
 	return (
 		<header
-			className={cn("flex items-center justify-between gap-4", className)}
+			className="w-full border-b py-2"
 			{...props}
 		>
-			{children}
+			<div
+				className={cn(
+					"mx-auto flex max-w-5xl items-center justify-between gap-4 px-6",
+					className,
+				)}
+			>
+				{children}
+			</div>
 		</header>
 	);
 };
