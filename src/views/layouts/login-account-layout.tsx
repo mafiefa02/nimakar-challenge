@@ -14,7 +14,7 @@ export const LoginAccountLayout = () => {
 	return (
 		<Card className="w-full">
 			<CardHeader>
-				<CardTitle>Masuk ke Rakamin</CardTitle>
+				<CardTitle>Masuk ke Nimakar</CardTitle>
 				<CardDescription>
 					Belum punya akun?{" "}
 					<Link

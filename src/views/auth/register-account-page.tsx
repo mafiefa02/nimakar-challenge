@@ -17,7 +17,7 @@ export const RegisterAccountPage = () => {
 	return (
 		<Card className="w-full">
 			<CardHeader>
-				<CardTitle>Bergabung dengan Rakamin</CardTitle>
+				<CardTitle>Bergabung dengan Nimakar</CardTitle>
 				<CardDescription>
 					Sudah punya akun?{" "}
 					<Link

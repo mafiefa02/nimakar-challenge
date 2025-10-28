@@ -24,7 +24,7 @@ const ERRORS: ErrorHandler[] = [
 				color="danger"
 			>
 				<p>
-					Email ini sudah terdaftar sebagai akun di Rakamin Academy.{" "}
+					Email ini sudah terdaftar sebagai akun di Nimakar Academy.{" "}
 					<Link
 						to="/auth/login"
 						className="font-bold"
@@ -43,7 +43,7 @@ const ERRORS: ErrorHandler[] = [
 				color="danger"
 			>
 				<p>
-					Email ini belum terdaftar sebagai akun di Rakamin Academy.{" "}
+					Email ini belum terdaftar sebagai akun di Nimakar Academy.{" "}
 					<Link
 						to="/auth/register"
 						className="font-bold"
