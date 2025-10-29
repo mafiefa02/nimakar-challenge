@@ -11,7 +11,7 @@ export const NewJobCtaCard = () => {
 				className="-z-10 absolute opacity-15"
 			/>
 			<CardContent className="flex flex-col gap-6 p-10">
-				<div className="flex flex-col gap-1 text-background">
+				<div className="flex flex-col gap-1 text-center text-background">
 					<strong className="text-heading-sm">
 						Recruit the best candidates
 					</strong>

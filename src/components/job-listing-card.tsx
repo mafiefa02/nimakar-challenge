@@ -11,14 +11,14 @@ export const JobListingCard = ({ job }: { job: JobModel }) => {
 			<CardContent className="flex flex-col gap-3 px-6">
 				<div className="flex items-center gap-3">
 					<Badge
-						className="w-fit font-bold text-base"
+						className="w-fit font-bold text-base md:text-sm lg:text-base"
 						variant="outline"
 						color="success"
 					>
 						{job.jobStatusDisplay}
 					</Badge>
 					<Badge
-						className="w-fit text-base"
+						className="w-fit text-base md:text-sm lg:text-base"
 						variant="outline"
 						color="neutral"
 					>
@@ -27,8 +27,12 @@ export const JobListingCard = ({ job }: { job: JobModel }) => {
 				</div>
 				<div className="flex items-end justify-between gap-4">
 					<div className="flex flex-col gap-2">
-						<p className="font-bold text-xl">{job.get("title")}</p>
-						<p className="text-lg text-neutral-80">{job.salaryRangeDisplay}</p>
+						<p className="font-bold text-xl md:text-lg lg:text-xl">
+							{job.get("title")}
+						</p>
+						<p className="text-lg text-neutral-80 md:text-md lg:text-lg">
+							{job.salaryRangeDisplay}
+						</p>
 					</div>
 					<Button
 						size="sm"
