@@ -11,7 +11,6 @@
 	"formatter": {
 		"enabled": true,
 		"indentStyle": "tab",
-		"expand": "always",
 		"attributePosition": "multiline"
 	},
 	"css": {
@@ -28,24 +27,13 @@
 					"fix": "safe",
 					"level": "error",
 					"options": {
-						"attributes": [
-							"className",
-							"class"
-						],
-						"functions": [
-							"clsx",
-							"twMerge",
-							"cn",
-							"cva"
-						]
+						"attributes": ["className", "class"],
+						"functions": ["clsx", "twMerge", "cn", "cva"]
 					}
 				}
 			}
 		},
-		"includes": [
-			"**",
-			"!dist"
-		]
+		"includes": ["**", "!dist"]
 	},
 	"javascript": {
 		"formatter": {
@@ -54,9 +42,7 @@
 	},
 	"overrides": [
 		{
-			"includes": [
-				"**/*.{ts,tsx}"
-			],
+			"includes": ["**/*.{ts,tsx}"],
 			"linter": {
 				"rules": {
 					"complexity": {
@@ -169,9 +155,7 @@
 			}
 		},
 		{
-			"includes": [
-				"**/*.{ts,tsx}"
-			],
+			"includes": ["**/*.{ts,tsx}"],
 			"linter": {
 				"rules": {
 					"complexity": {
@@ -198,9 +182,7 @@
 			}
 		},
 		{
-			"includes": [
-				"**/*.{ts,tsx}"
-			],
+			"includes": ["**/*.{ts,tsx}"],
 			"linter": {
 				"rules": {
 					"correctness": {
@@ -211,17 +193,13 @@
 			}
 		},
 		{
-			"includes": [
-				"**/*.{ts,tsx}"
-			],
+			"includes": ["**/*.{ts,tsx}"],
 			"linter": {
 				"rules": {}
 			}
 		},
 		{
-			"includes": [
-				"**/*.{ts,tsx}"
-			],
+			"includes": ["**/*.{ts,tsx}"],
 			"javascript": {
 				"globals": [
 					"onanimationend",
