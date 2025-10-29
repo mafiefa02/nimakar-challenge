@@ -7,7 +7,7 @@ export const AuthCodeSchema = type({
 });
 export type AuthCodeSchema = typeof AuthCodeSchema.infer;
 
-export const UserSchema = type({
+export const User = type({
 	email: "string.email",
 	password: "string | undefined",
 	role: type("'admin' | 'jobseeker'").default("jobseeker"),
@@ -20,4 +20,29 @@ export const UserSchema = type({
 	linkedinLink: "string | undefined",
 	dateOfBirth: "Date | undefined",
 });
-export type UserSchema = typeof UserSchema.infer;
+export type User = typeof User.infer;
+
+export const ListCardSchema = type({
+	badge: "'Active' | 'Inactive'",
+	started_on_text: "string",
+	cta: "string",
+});
+export type ListCardSchema = typeof ListCardSchema.infer;
+
+export const SalarySchema = type({
+	min: "number",
+	max: "number",
+	currency: "string",
+}).narrow((s) => s.min <= s.max);
+export type SalarySchema = typeof SalarySchema.infer;
+
+export const JobSchema = type({
+	id: /^job_\d{8}_\d{4}$/,
+	slug: "string",
+	title: "string",
+	status: "'active' | 'inactive'",
+	startDate: "Date",
+	salary: SalarySchema,
+	listCard: ListCardSchema,
+});
+export type JobSchema = typeof JobSchema.infer;

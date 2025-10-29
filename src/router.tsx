@@ -1,11 +1,11 @@
 import type { RouteObject } from "react-router";
 import { createBrowserRouter, RouterContextProvider } from "react-router";
 import { sessionContext } from "./contexts/session-context";
+import { userService } from "./domains/user";
 import { emailConfirmationPageLoader } from "./loaders/email-confirmation-page-loader";
 import { sessionLoader } from "./loaders/session-loader";
 import { authMiddleware } from "./middlewares/auth-middleware";
 import { roleGuardMiddleware } from "./middlewares/role-guard-middleware";
-import { User } from "./models/user";
 import { AdminPage } from "./views/admin-page";
 import { EmailConfirmationPage } from "./views/auth/email-confirmation-page";
 import { LoginAccountPage } from "./views/auth/login-account-page";
@@ -49,10 +49,11 @@ const routes: RouteObject[] = [
 				],
 			},
 			{
+				path: "auth",
 				Component: AuthLayout,
 				children: [
 					{
-						path: "/auth/login",
+						path: "login",
 						Component: LoginAccountLayout,
 						children: [
 							{
@@ -66,11 +67,11 @@ const routes: RouteObject[] = [
 						],
 					},
 					{
-						path: "/auth/register",
+						path: "register",
 						Component: RegisterAccountPage,
 					},
 					{
-						path: "/auth/email-confirmation",
+						path: "email-confirmation",
 						Component: EmailConfirmationPage,
 						loader: emailConfirmationPageLoader,
 					},
@@ -81,13 +82,10 @@ const routes: RouteObject[] = [
 ];
 
 export const router = createBrowserRouter(routes, {
-	getContext() {
-		const user = new User({
-			email: "example@email.com",
-			role: "admin",
-		});
+	async getContext() {
+		const user = await userService.getUserByIdentifier("tes");
 		const context = new RouterContextProvider();
-		context.set(sessionContext, user);
+		context.set(sessionContext, user.data);
 		return context;
 	},
 });

@@ -15,7 +15,7 @@ export const authMiddleware: MiddlewareFunction = async (
 	}
 
 	if (session && isAuthPage) {
-		throw redirect(`/${session.get("role")}`);
+		throw redirect(`/${session.role}`);
 	}
 
 	await next();

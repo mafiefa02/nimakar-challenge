@@ -11,7 +11,7 @@ export const roleGuardMiddleware: MiddlewareFunction = async (
 	if (!session) throw redirect("/auth/register");
 
 	const { pathname } = new URL(request.url);
-	const intendedPath = `/${session.get("role")}`;
+	const intendedPath = `/${session.role}`;
 
 	if (!pathname.startsWith(intendedPath)) {
 		throw redirect(intendedPath);

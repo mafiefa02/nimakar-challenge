@@ -1,22 +1,17 @@
 import { cva } from "class-variance-authority";
 
-export const badgeVariants = cva(
-	"inline-flex shrink-0 items-center justify-center gap-1 overflow-hidden whitespace-nowrap rounded border px-2 py-0.5 transition-[color,box-shadow] focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 [&>svg]:pointer-events-none",
+export const alertVariants = cva(
+	"relative grid w-full grid-cols-[0_1fr] items-start gap-y-0.5 rounded-lg border px-4 py-3 text-sm has-[>svg]:grid-cols-[calc(var(--spacing)*4)_1fr] has-[>svg]:gap-x-3 [&>svg]:size-4 [&>svg]:translate-y-0.5 [&>svg]:text-current",
 	{
 		variants: {
 			variant: {
 				filled: "",
 				outline: "",
 			},
-			size: {
-				small: "text-sm [&>svg]:size-2.5",
-				big: "text-md [&>svg]:size-4",
-			},
 			color: {
 				success: "",
 				danger: "",
 				secondary: "",
-				neutral: "",
 			},
 		},
 		compoundVariants: [
@@ -51,21 +46,10 @@ export const badgeVariants = cva(
 				color: "success",
 				class: "border-success-border bg-success-surface text-success",
 			},
-			{
-				variant: "filled",
-				color: "neutral",
-				class: "border-border bg-neutral-20",
-			},
-			{
-				variant: "outline",
-				color: "neutral",
-				class: "border-border bg-transparent",
-			},
 		],
 		defaultVariants: {
 			variant: "filled",
 			color: "success",
-			size: "small",
 		},
 	},
 );

@@ -11,7 +11,7 @@ export const GoogleButton = ({
 			{...props}
 		>
 			<GoogleIcon />
-			<p>{children}</p>
+			{children}
 		</Button>
 	);
 };

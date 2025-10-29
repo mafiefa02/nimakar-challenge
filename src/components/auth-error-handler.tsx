@@ -1,5 +1,5 @@
 import { Link, useSearchParams } from "react-router";
-import { Badge } from "./shadcn/badge";
+import { Alert, AlertDescription } from "./shadcn/alert";
 
 type ErrorHandler = {
 	id: string;
@@ -12,17 +12,23 @@ export const AuthErrorHandler = () => {
 
 	if (!errorId) return;
 
-	return ERRORS.find((error) => error.id === errorId)?.element;
+	const element = ERRORS.find((error) => error.id === errorId)?.element;
+
+	return (
+		<Alert
+			variant="outline"
+			color="danger"
+		>
+			{element}
+		</Alert>
+	);
 };
 
 const ERRORS: ErrorHandler[] = [
 	{
 		id: "email-found",
 		element: (
-			<Badge
-				variant="outline"
-				color="danger"
-			>
+			<AlertDescription>
 				<p>
 					Email ini sudah terdaftar sebagai akun di Nimakar Academy.{" "}
 					<Link
@@ -32,16 +38,13 @@ const ERRORS: ErrorHandler[] = [
 						Masuk
 					</Link>
 				</p>
-			</Badge>
+			</AlertDescription>
 		),
 	},
 	{
 		id: "email-not-found",
 		element: (
-			<Badge
-				variant="outline"
-				color="danger"
-			>
+			<AlertDescription>
 				<p>
 					Email ini belum terdaftar sebagai akun di Nimakar Academy.{" "}
 					<Link
@@ -51,21 +54,18 @@ const ERRORS: ErrorHandler[] = [
 						Daftar
 					</Link>
 				</p>
-			</Badge>
+			</AlertDescription>
 		),
 	},
 	{
 		id: "link-expired",
 		element: (
-			<Badge
-				variant="outline"
-				color="danger"
-			>
+			<AlertDescription>
 				<p>
 					Link <strong className="inline">sudah kadaluarsa</strong>, silakan
 					login kembali!
 				</p>
-			</Badge>
+			</AlertDescription>
 		),
 	},
 ];
