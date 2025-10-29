@@ -11,9 +11,18 @@ export const adminJobPageLoader = (async ({ params, ...rest }) => {
 	}
 
 	const job = await services.job.getJobByIdentifier(slug);
-	const applicationForm = job
-		? await services.job.getApplicationFormByJobId(job.get("id"))
-		: null;
+
+	if (!job) {
+		throw redirect(`/${session.role}`);
+	}
+
+	const applicationForm = await services.job.getApplicationFormByJobId(
+		job.get("id"),
+	);
+
+	if (!applicationForm) {
+		throw redirect(`/${session.role}`);
+	}
 
 	return {
 		session,

@@ -7,27 +7,33 @@ import { Job, JobApplicationForm } from "./job.type";
 export const createFormToJobApplicationForm = (
 	value: CreateJobModalFormSchema,
 ) => {
+	const allSections = [
+		{ key: "full_name", label: "Nama Lengkap", required: value.mpiFullName },
+		{ key: "dob", label: "Tanggal Lahir", required: value.mpiDob },
+		{ key: "domicile", label: "Domisili", required: value.mpiDomicile },
+		{ key: "email", label: "Email", required: value.mpiEmail },
+		{ key: "gender", label: "Jenis Kelamin", required: value.mpiGender },
+		{ key: "linkedin", label: "Link LinkedIn", required: value.mpiLinkedin },
+		{
+			key: "phone_number",
+			label: "Nomor Telepon",
+			required: value.mpiPhoneNumber,
+		},
+		{
+			key: "photo_profile",
+			label: "Foto Profil",
+			required: value.mpiPhotoProfile,
+		},
+	];
+
+	const filteredSections = allSections.filter(
+		(section) => section.required !== "off",
+	);
+
 	const validated = JobApplicationForm({
 		id: uuidv4(),
 		jobId: value.id,
-		sections: [
-			{ key: "full_name", label: "Nama Lengkap", required: value.mpiFullName },
-			{ key: "dob", label: "Tanggal Lahir", required: value.mpiDob },
-			{ key: "domicile", label: "Domisili", required: value.mpiDomicile },
-			{ key: "email", label: "Email", required: value.mpiEmail },
-			{ key: "gender", label: "Jenis Kelamin", required: value.mpiGender },
-			{ key: "linkedin", label: "Link LinkedIn", required: value.mpiLinkedin },
-			{
-				key: "phone_number",
-				label: "Nomor Telepon",
-				required: value.mpiPhoneNumber,
-			},
-			{
-				key: "photo_profile",
-				label: "Foto Profil",
-				required: value.mpiPhotoProfile,
-			},
-		],
+		sections: filteredSections,
 	});
 
 	if (validated instanceof type.errors) {
