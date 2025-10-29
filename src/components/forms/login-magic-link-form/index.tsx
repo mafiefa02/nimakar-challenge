@@ -7,7 +7,7 @@ import {
 	loginMagicLinkFormSchema as formSchema,
 } from "./login-magic-link-form-schema";
 
-export const LoginMagicLinkFormProvider = ({
+export const LoginMagicLinkForm = ({
 	children,
 	className,
 	...props

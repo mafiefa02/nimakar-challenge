@@ -2,11 +2,13 @@ import { regex } from "arkregex";
 import { type } from "arktype";
 
 export const Job = type({
-	id: regex("^job_\\d{8}_\\d+"),
+	id: "string.uuid.v4",
 	slug: "string",
 	title: "string",
 	status: "'active' | 'inactive' | 'draft'",
 	startDate: "Date",
+	candidatesAmount: type("number.integer").atLeast(1),
+	type: "'full-time' | 'contract' | 'part-time' | 'internship' | 'freelance'",
 	salary: type({
 		min: "number",
 		max: "number",
@@ -15,12 +17,24 @@ export const Job = type({
 });
 export type Job = typeof Job.infer;
 
+export const JobApplicationForm = type({
+	id: "string.uuid.v4",
+	jobId: Job.get("id"),
+	sections: type({
+		key: "string",
+		label: "string",
+		required: "boolean | undefined",
+	}).array(),
+});
+export type JobApplicationForm = typeof JobApplicationForm.infer;
+
 export const JobOpening = type({
+	id: "string.uuid.v4",
 	name: type("string").atLeastLength(1),
 	type: type(
 		"'full-time' | 'contract' | 'part-time' | 'internship' | 'freelance'",
 	),
-	description: "string",
-	numOfCandidatesNeeded: type("number").atLeast(1),
+	description: type("string").atLeastLength(1),
+	candidatesAmount: type("number.integer").atLeast(1),
 });
 export type JobOpening = typeof JobOpening.infer;

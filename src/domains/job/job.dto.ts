@@ -7,6 +7,8 @@ export const JobDto = type({
 	title: "string",
 	status: "'active' | 'inactive'",
 	startDate: "string",
+	type: "string",
+	candidatesAmount: "string",
 	salary: type({
 		min: "number",
 		max: "number",

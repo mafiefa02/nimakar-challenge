@@ -9,7 +9,7 @@ export const JobListingCardDate = ({ job }: { job: JobModel }) => {
 			variant="outline"
 			color="neutral"
 		>
-			started on {format(job.get("startDate"), "PPP")}
+			sejak {format(job.get("startDate"), "PPP")}
 		</Badge>
 	);
 };

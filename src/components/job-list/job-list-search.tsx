@@ -11,7 +11,7 @@ export const JobListSearch = () => {
 		<Input
 			value={search}
 			onChange={(e) => setSearch(e.target.value)}
-			placeholder="Search by job details"
+			placeholder="Cari berdasarkan nama pekerjaan"
 		/>
 	);
 };

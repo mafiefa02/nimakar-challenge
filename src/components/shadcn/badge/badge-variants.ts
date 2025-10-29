@@ -7,6 +7,8 @@ export const badgeVariants = cva(
 			variant: {
 				filled: "",
 				outline: "",
+				disabled:
+					"border-border bg-neutral-30 text-neutral-60 hover:cursor-not-allowed!",
 			},
 			size: {
 				small: "text-sm [&>svg]:size-2.5",
@@ -17,6 +19,7 @@ export const badgeVariants = cva(
 				danger: "",
 				secondary: "",
 				neutral: "",
+				primary: "",
 			},
 		},
 		compoundVariants: [
@@ -60,6 +63,16 @@ export const badgeVariants = cva(
 				variant: "outline",
 				color: "neutral",
 				class: "border-border bg-transparent",
+			},
+			{
+				variant: "filled",
+				color: "primary",
+				class: "bg-primary text-background",
+			},
+			{
+				variant: "outline",
+				color: "primary",
+				class: "border-primary-border bg-primary-surface text-primary",
 			},
 		],
 		defaultVariants: {

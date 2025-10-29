@@ -9,7 +9,7 @@ export const JobListingCardCta = ({ job }: { job: JobModel }) => {
 			size="sm"
 			asChild
 		>
-			<Link to={jobUrl}>Manage Job</Link>
+			<Link to={jobUrl}>Lihat</Link>
 		</Button>
 	);
 };

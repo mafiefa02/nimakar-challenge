@@ -1,6 +1,6 @@
 import { AuthErrorHandler } from "-/components/auth-error-handler";
-import { RegisterAccountFormFields } from "-/components/forms/register-account-form/register-account-form-fields";
-import { RegisterAccountFormProvider } from "-/components/forms/register-account-form/register-account-form-provider";
+import { RegisterAccountForm } from "-/components/forms/register-account-form";
+import { RegisterAccountFormEmailField } from "-/components/forms/register-account-form/fields/register-account-form-email-field";
 import { RegisterWithGoogleButton } from "-/components/register-with-google-button";
 import { Button } from "-/components/shadcn/button";
 import {
@@ -30,15 +30,15 @@ export const RegisterAccountPage = () => {
 			</CardHeader>
 			<CardContent className="flex w-full flex-col gap-4">
 				<AuthErrorHandler />
-				<RegisterAccountFormProvider>
-					<RegisterAccountFormFields />
+				<RegisterAccountForm>
+					<RegisterAccountFormEmailField />
 					<Button
 						type="submit"
 						variant="secondary"
 					>
 						Daftar dengan email
 					</Button>
-				</RegisterAccountFormProvider>
+				</RegisterAccountForm>
 				<div className="flex w-full items-center gap-3">
 					<Separator
 						className="shrink"

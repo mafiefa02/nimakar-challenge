@@ -1,8 +1,9 @@
+import { type } from "arktype";
 import type { UserDto } from "./user.dto";
-import type { User } from "./user.type";
+import { User } from "./user.type";
 
 export const toUser = (dto: UserDto): User => {
-	return {
+	const validated = User({
 		id: dto.id,
 		email: dto.email,
 		role: dto.role,
@@ -15,5 +16,11 @@ export const toUser = (dto: UserDto): User => {
 			linkedinLink: dto.linkedin_link,
 			dateOfBirth: dto.date_of_birth ? new Date(dto.date_of_birth) : undefined,
 		},
-	};
+	});
+
+	if (validated instanceof type.errors) {
+		throw new Error(validated.summary);
+	}
+
+	return validated;
 };

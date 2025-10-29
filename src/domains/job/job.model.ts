@@ -2,9 +2,9 @@ import { formatNumberToCurrency } from "-/lib/utils";
 import type { Job } from "./job.type";
 
 const JOB_STATUS_MAP: Record<Job["status"], string> = {
-	active: "Active",
-	inactive: "Inactive",
-	draft: "Draft",
+	active: "Aktif",
+	inactive: "Non-aktif",
+	draft: "Draf",
 };
 
 export class JobModel {

@@ -1,6 +1,8 @@
-import { LoginPasswordFormFields } from "-/components/forms/login-password-form/login-password-form-fields";
-import { LoginPasswordFormProvider } from "-/components/forms/login-password-form/login-password-form-provider";
+import { LoginPasswordForm } from "-/components/forms/login-password-form";
+import { LoginPasswordFormEmailField } from "-/components/forms/login-password-form/fields/login-password-form-email-field";
+import { LoginPasswordFormPasswordField } from "-/components/forms/login-password-form/fields/login-password-form-password-field";
 import { Button } from "-/components/shadcn/button";
+import { FieldGroup } from "-/components/shadcn/field";
 import { Separator } from "-/components/shadcn/separator";
 import { MailIcon } from "lucide-react";
 import { Link } from "react-router";
@@ -8,13 +10,16 @@ import { Link } from "react-router";
 export const LoginWithPasswordPage = () => {
 	return (
 		<>
-			<LoginPasswordFormProvider>
-				<LoginPasswordFormFields />
+			<LoginPasswordForm>
+				<FieldGroup>
+					<LoginPasswordFormEmailField />
+					<LoginPasswordFormPasswordField />
+				</FieldGroup>
 				<p className="text-right text-primary hover:cursor-pointer">
 					Lupa kata sandi?
 				</p>
 				<Button variant="secondary">Masuk</Button>
-			</LoginPasswordFormProvider>
+			</LoginPasswordForm>
 			<div className="flex w-full items-center gap-3">
 				<Separator
 					className="shrink"

@@ -1,7 +1,7 @@
 import { useDebounce } from "@uidotdev/usehooks";
 import emptyIllustration from "-/assets/empty-illustration.png";
 import { parseAsString, useQueryState } from "nuqs";
-import { Button } from "../shadcn/button";
+import { CreateJobModalTrigger } from "../create-job-modal/create-job-modal-trigger";
 
 export const JobListEmpty = () => {
 	const [searchQuery] = useQueryState("search", parseAsString.withDefault(""));
@@ -23,10 +23,12 @@ export const JobListEmpty = () => {
 				className="aspect-auto size-60"
 			/>
 			<div className="flex flex-col gap-1 text-center">
-				<h1 className="font-bold text-heading-sm">{headingText}</h1>
-				<p className="text-lg">{descriptionText}</p>
+				<h1 className="text-pretty font-bold text-heading-sm">{headingText}</h1>
+				<p className="text-pretty text-lg">{descriptionText}</p>
 			</div>
-			<Button variant="secondary">Create a new job</Button>
+			<CreateJobModalTrigger variant="secondary">
+				Create a new job
+			</CreateJobModalTrigger>
 		</div>
 	);
 };

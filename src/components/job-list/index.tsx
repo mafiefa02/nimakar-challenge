@@ -1,7 +1,7 @@
 import { useSuspenseQuery } from "@tanstack/react-query";
 import { useDebounce } from "@uidotdev/usehooks";
 import { JobListingCard } from "-/components/job-listing-card";
-import { jobService } from "-/domains/job";
+import { getJobsQueryOptions } from "-/domains/job/queries/get-jobs-query";
 import { parseAsString, useQueryState } from "nuqs";
 import { ErrorElement } from "../error-element";
 import { JobListEmpty } from "./job-list-empty";
@@ -13,10 +13,10 @@ export const JobList = () => {
 	);
 	const search = useDebounce(searchQuery, 150);
 
-	const { data: jobs, isError } = useSuspenseQuery({
-		queryKey: ["jobs", { search }],
-		queryFn: async () => await jobService.getJobs({ search }),
-	});
+	const { data: jobs, isError } = useSuspenseQuery(
+		getJobsQueryOptions([{ search }]),
+	);
+	console.log({ query: getJobsQueryOptions([{ search }]) });
 
 	if (isError) return <ErrorElement />;
 	if (!jobs || jobs.length === 0) return <JobListEmpty />;

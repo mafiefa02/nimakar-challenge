@@ -1,5 +1,5 @@
-import { LoginMagicLinkFormFields } from "-/components/forms/login-magic-link-form/login-magic-link-form-fields";
-import { LoginMagicLinkFormProvider } from "-/components/forms/login-magic-link-form/login-magic-link-form-provider";
+import { LoginMagicLinkForm } from "-/components/forms/login-magic-link-form";
+import { LoginMagicLinkFormEmailField } from "-/components/forms/login-magic-link-form/fields/login-magic-link-form-email-field";
 import { Button } from "-/components/shadcn/button";
 import { Separator } from "-/components/shadcn/separator";
 import { KeyRoundIcon } from "lucide-react";
@@ -8,15 +8,15 @@ import { Link } from "react-router";
 export const LoginAccountPage = () => {
 	return (
 		<>
-			<LoginMagicLinkFormProvider>
-				<LoginMagicLinkFormFields />
+			<LoginMagicLinkForm>
+				<LoginMagicLinkFormEmailField />
 				<Button
 					type="submit"
 					variant="secondary"
 				>
 					Kirim link
 				</Button>
-			</LoginMagicLinkFormProvider>
+			</LoginMagicLinkForm>
 			<div className="flex w-full items-center gap-3">
 				<Separator
 					className="shrink"

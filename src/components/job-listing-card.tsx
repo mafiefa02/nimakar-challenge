@@ -22,7 +22,7 @@ export const JobListingCard = ({ job }: { job: JobModel }) => {
 						variant="outline"
 						color="neutral"
 					>
-						started on {format(job.get("startDate"), "PPP")}
+						sejak {format(job.get("startDate"), "PPP")}
 					</Badge>
 				</div>
 				<div className="flex items-end justify-between gap-4">
@@ -38,7 +38,7 @@ export const JobListingCard = ({ job }: { job: JobModel }) => {
 						size="sm"
 						asChild
 					>
-						<Link to={`job/${job.get("slug")}`}>Manage Job</Link>
+						<Link to={`job/${job.get("slug")}`}>Lihat</Link>
 					</Button>
 				</div>
 			</CardContent>

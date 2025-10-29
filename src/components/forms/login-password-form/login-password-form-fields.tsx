@@ -23,7 +23,7 @@ export const LoginPasswordFormFields = () => {
 							{...field}
 							id={`${formId}-email`}
 							aria-invalid={fieldState.invalid}
-							placeholder="example@email.com"
+							placeholder="contoh@email.com"
 							type="email"
 						/>
 						{fieldState.invalid && (

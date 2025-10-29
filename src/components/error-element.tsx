@@ -14,8 +14,10 @@ export const ErrorElement = () => {
 				className="aspect-auto size-60"
 			/>
 			<div className="flex flex-col gap-1 text-center">
-				<h1 className="font-bold text-heading-sm">Something went wrong!</h1>
-				<p className="text-lg">
+				<h1 className="text-pretty font-bold text-heading-sm">
+					Something went wrong!
+				</h1>
+				<p className="text-pretty text-lg">
 					Try reloading the page, or go back to the homepage.
 				</p>
 			</div>
