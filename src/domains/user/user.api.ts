@@ -1,6 +1,7 @@
 import { type } from "arktype";
 import type { AxiosInstance } from "axios";
 import { isAxiosError } from "axios";
+import { v4 as uuidv4 } from "uuid";
 import { UserDto } from "./user.dto";
 import { toUser } from "./user.transform";
 import type { User } from "./user.type";
@@ -17,7 +18,7 @@ const defaultUser: UserDto = {
 	linkedin_link: undefined,
 	phone_number: undefined,
 	photo_profile: undefined,
-	auth_code: undefined,
+	auth_code: { code: uuidv4(), issuedAt: new Date(), maxAge: 10 },
 };
 
 export class UserApi {

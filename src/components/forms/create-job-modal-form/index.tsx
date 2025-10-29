@@ -72,7 +72,7 @@ export const CreateJobModalForm = ({
 		if (isOpen) {
 			form.reset();
 		}
-	}, [isOpen]);
+	}, [isOpen, form.reset]);
 
 	return (
 		<FormProvider {...form}>
