@@ -23,7 +23,7 @@ export const JobApplicationForm = type({
 	sections: type({
 		key: "string",
 		label: "string",
-		required: "boolean | undefined",
+		required: "string",
 	}).array(),
 });
 export type JobApplicationForm = typeof JobApplicationForm.infer;

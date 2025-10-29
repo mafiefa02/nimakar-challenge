@@ -18,9 +18,9 @@ import {
 const fieldName = "mpiGender";
 
 const statuses = [
-	{ label: "Wajib", value: true },
-	{ label: "Opsional", value: false },
-	{ label: "Mati", value: undefined },
+	{ label: "Wajib", value: "required" },
+	{ label: "Opsional", value: "optional" },
+	{ label: "Mati", value: "off" },
 ];
 
 export const CreateJobModalFormGenderField = () => {
@@ -30,7 +30,7 @@ export const CreateJobModalFormGenderField = () => {
 			name={fieldName}
 			control={form.control}
 			render={({ field, fieldState }) => {
-				const isActive = (value?: Boolean) => field.value === value;
+				const isActive = (value: string) => field.value === value;
 				return (
 					<Field
 						orientation="horizontal"
@@ -41,17 +41,8 @@ export const CreateJobModalFormGenderField = () => {
 						</FieldLabel>
 						<Select
 							name={field.name}
-							value={
-								field.value === undefined
-									? "NaN"
-									: Number(field.value).toString()
-							}
-							onValueChange={(value) => {
-								form.setValue(
-									field.name,
-									value === "NaN" ? undefined : Boolean(Number(value)),
-								);
-							}}
+							value={field.value}
+							onValueChange={field.onChange}
 						>
 							<SelectTrigger
 								id={`${createJobModalFormId}-${fieldName}`}
@@ -65,7 +56,7 @@ export const CreateJobModalFormGenderField = () => {
 								{statuses.map((status) => (
 									<SelectItem
 										key={status.label}
-										value={Number(status.value).toString()}
+										value={status.value}
 									>
 										{status.label}
 									</SelectItem>

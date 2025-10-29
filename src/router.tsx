@@ -3,10 +3,12 @@ import { createBrowserRouter, RouterContextProvider } from "react-router";
 import { sessionContext } from "./contexts/session-context";
 import { services } from "./domains/services";
 import type { User } from "./domains/user/user.type";
+import { adminJobPageLoader } from "./loaders/admin-job-page-loader";
 import { emailConfirmationPageLoader } from "./loaders/email-confirmation-page-loader";
 import { sessionLoader } from "./loaders/session-loader";
 import { authMiddleware } from "./middlewares/auth-middleware";
 import { roleGuardMiddleware } from "./middlewares/role-guard-middleware";
+import { AdminJobPage } from "./views/admin-job-page";
 import { AdminPage } from "./views/admin-page";
 import { EmailConfirmationPage } from "./views/auth/email-confirmation-page";
 import { LoginAccountPage } from "./views/auth/login-account-page";
@@ -39,8 +41,18 @@ const routes: RouteObject[] = [
 					},
 					{
 						path: "admin",
-						Component: AdminPage,
-						loader: sessionLoader,
+						children: [
+							{
+								index: true,
+								Component: AdminPage,
+								loader: sessionLoader,
+							},
+							{
+								path: "job/:slug",
+								loader: adminJobPageLoader,
+								Component: AdminJobPage,
+							},
+						],
 					},
 				],
 				middleware: [roleGuardMiddleware],

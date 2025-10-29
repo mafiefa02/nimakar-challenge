@@ -39,11 +39,16 @@ export const CreateJobModalForm = ({
 			name: "",
 			candidatesAmount: 1,
 			currency: "IDR",
-			mpiFullName: true,
-			mpiPhotoProfile: true,
-			mpiEmail: true,
+			mpiFullName: "required",
+			mpiPhotoProfile: "required",
+			mpiEmail: "required",
 			minimumPay: 0,
 			maximumPay: 0,
+			mpiDob: "off",
+			mpiDomicile: "off",
+			mpiGender: "off",
+			mpiLinkedin: "off",
+			mpiPhoneNumber: "off",
 		},
 	});
 
@@ -64,7 +69,9 @@ export const CreateJobModalForm = ({
 	};
 
 	useEffect(() => {
-		form.reset();
+		if (isOpen) {
+			form.reset();
+		}
 	}, [isOpen]);
 
 	return (

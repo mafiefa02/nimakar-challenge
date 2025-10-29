@@ -16,7 +16,6 @@ export const JobList = () => {
 	const { data: jobs, isError } = useSuspenseQuery(
 		getJobsQueryOptions([{ search }]),
 	);
-	console.log({ query: getJobsQueryOptions([{ search }]) });
 
 	if (isError) return <ErrorElement />;
 	if (!jobs || jobs.length === 0) return <JobListEmpty />;

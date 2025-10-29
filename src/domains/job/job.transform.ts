@@ -31,7 +31,6 @@ export const createFormToJobApplicationForm = (
 	});
 
 	if (validated instanceof type.errors) {
-		console.log(validated.summary);
 		throw new Error(validated.summary);
 	}
 

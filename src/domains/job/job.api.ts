@@ -35,7 +35,6 @@ export class JobApi {
 			);
 
 			if (storedData instanceof type.errors) {
-				console.log(storedData.summary);
 				throw new Error(storedData.summary);
 			}
 
@@ -171,7 +170,6 @@ export class JobApi {
 			);
 		} catch {
 			const storedJobs = this.loadJobsFromStorage();
-			console.log(storedJobs);
 			if (!storedJobs) return [];
 
 			return storedJobs.filter((job) =>

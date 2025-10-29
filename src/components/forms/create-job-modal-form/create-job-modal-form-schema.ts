@@ -9,14 +9,14 @@ export const createJobModalFormSchema = JobOpening.and(
 	}),
 ).and(
 	type({
-		mpiFullName: "boolean | undefined",
-		mpiPhotoProfile: "boolean | undefined",
-		mpiGender: "boolean | undefined",
-		mpiDomicile: "boolean | undefined",
-		mpiEmail: "boolean | undefined",
-		mpiPhoneNumber: "boolean | undefined",
-		mpiLinkedin: "boolean | undefined",
-		mpiDob: "boolean | undefined",
+		mpiFullName: "string",
+		mpiPhotoProfile: "string",
+		mpiGender: "string",
+		mpiDomicile: "string",
+		mpiEmail: "string",
+		mpiPhoneNumber: "string",
+		mpiLinkedin: "string",
+		mpiDob: "string",
 	}),
 );
 export type CreateJobModalFormSchema = typeof createJobModalFormSchema.infer;
