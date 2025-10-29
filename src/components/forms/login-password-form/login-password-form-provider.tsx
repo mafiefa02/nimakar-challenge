@@ -1,4 +1,5 @@
 import { arktypeResolver } from "@hookform/resolvers/arktype";
+import { useAuthenticate } from "-/domains/user/hooks/use-authenticate";
 import { cn } from "-/lib/utils";
 import { FormProvider, useForm } from "react-hook-form";
 import {
@@ -12,6 +13,10 @@ export const LoginPasswordFormProvider = ({
 	className,
 	...props
 }: React.ComponentPropsWithRef<"form">) => {
+	const { login } = useAuthenticate();
+
+	const onSubmit = (values: FormSchema) => login(values);
+
 	const form = useForm<FormSchema>({
 		resolver: arktypeResolver(formSchema),
 		mode: "onSubmit",
@@ -20,10 +25,6 @@ export const LoginPasswordFormProvider = ({
 			password: "",
 		},
 	});
-
-	const onSubmit = (values: FormSchema) => {
-		console.log(values);
-	};
 
 	return (
 		<FormProvider {...form}>

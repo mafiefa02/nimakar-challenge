@@ -11,7 +11,22 @@ export class UserService {
 	public getUserByIdentifier = async (
 		...args: Parameters<UserApi["getUserByIdentifier"]>
 	) => {
-		const user = await this.api.getUserByIdentifier(...args);
-		return new UserModel(user);
+		try {
+			const user = await this.api.getUserByIdentifier(...args);
+			return user ? new UserModel(user) : null;
+		} catch (e) {
+			const error = e as Error;
+			throw new Error(error.message);
+		}
+	};
+
+	public loginUser = async (...args: Parameters<UserApi["loginUser"]>) => {
+		try {
+			const user = await this.api.loginUser(...args);
+			return user;
+		} catch (e) {
+			const error = e as Error;
+			throw new Error(error.message);
+		}
 	};
 }

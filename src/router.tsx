@@ -1,7 +1,8 @@
 import type { RouteObject } from "react-router";
 import { createBrowserRouter, RouterContextProvider } from "react-router";
 import { sessionContext } from "./contexts/session-context";
-import { userService } from "./domains/user";
+import { services } from "./domains/services";
+import type { User } from "./domains/user/user.type";
 import { emailConfirmationPageLoader } from "./loaders/email-confirmation-page-loader";
 import { sessionLoader } from "./loaders/session-loader";
 import { authMiddleware } from "./middlewares/auth-middleware";
@@ -79,9 +80,30 @@ const routes: RouteObject[] = [
 
 export const router = createBrowserRouter(routes, {
 	async getContext() {
-		const user = await userService.getUserByIdentifier("tes");
 		const context = new RouterContextProvider();
-		context.set(sessionContext, user.data);
+
+		try {
+			const session = localStorage.getItem("session");
+
+			if (!session) {
+				context.set(sessionContext, null);
+				return context;
+			}
+
+			const sessionUser: User = JSON.parse(session);
+			const user = await services.user.getUserByIdentifier(sessionUser.email);
+
+			if (!user?.data) {
+				context.set(sessionContext, null);
+				return context;
+			}
+
+			context.set(sessionContext, user.data);
+		} catch {
+			localStorage.removeItem("session");
+			context.set(sessionContext, null);
+		}
+
 		return context;
 	},
 });
