@@ -19,9 +19,7 @@ import { RootLayout } from "./views/layouts/root-layout";
 
 const routes: RouteObject[] = [
 	{
-		middleware: [
-			authMiddleware,
-		],
+		middleware: [authMiddleware],
 		children: [
 			{
 				path: "/",
@@ -44,9 +42,7 @@ const routes: RouteObject[] = [
 						loader: sessionLoader,
 					},
 				],
-				middleware: [
-					roleGuardMiddleware,
-				],
+				middleware: [roleGuardMiddleware],
 			},
 			{
 				path: "auth",

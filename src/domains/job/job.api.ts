@@ -66,9 +66,7 @@ export class JobApi {
 				)
 				.map((jobDto) => toJob(jobDto));
 		} catch {
-			return [
-				defaultJob,
-			].filter((job) =>
+			return [defaultJob].filter((job) =>
 				query
 					? job.title.toLowerCase().includes(query.search.toLowerCase())
 					: job,

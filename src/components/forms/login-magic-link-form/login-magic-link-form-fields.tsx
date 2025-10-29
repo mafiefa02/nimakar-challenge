@@ -23,11 +23,7 @@ export const LoginMagicLinkFormFields = () => {
 					{fieldState.invalid && (
 						<div className="flex items-center gap-2">
 							<AlertTriangleIcon className="size-4" />
-							<FieldError
-								errors={[
-									fieldState.error,
-								]}
-							/>
+							<FieldError errors={[fieldState.error]} />
 						</div>
 					)}
 				</Field>

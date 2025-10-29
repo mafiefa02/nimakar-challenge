@@ -203,12 +203,7 @@ export const FieldError = ({
 		}
 
 		const uniqueErrors = [
-			...new Map(
-				errors.map((error) => [
-					error?.message,
-					error,
-				]),
-			).values(),
+			...new Map(errors.map((error) => [error?.message, error])).values(),
 		];
 
 		if (uniqueErrors?.length == 1) {
@@ -223,10 +218,7 @@ export const FieldError = ({
 				)}
 			</ul>
 		);
-	}, [
-		children,
-		errors,
-	]);
+	}, [children, errors]);
 
 	if (!content) {
 		return null;
