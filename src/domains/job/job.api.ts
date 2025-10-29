@@ -27,7 +27,7 @@ export class JobApi {
 	}
 
 	public getJobByIdentifier = async (
-		identifier: Job["id"] | Job["slug"],
+		identifier: JobDto["id"] | JobDto["slug"],
 	): Promise<Job> => {
 		try {
 			const response = await this.client.get(this.endpoint, {

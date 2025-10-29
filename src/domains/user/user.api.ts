@@ -29,7 +29,7 @@ export class UserApi {
 	}
 
 	public getUserByIdentifier = async (
-		identifier: User["email"] | User["id"],
+		identifier: UserDto["email"] | UserDto["id"],
 	): Promise<User> => {
 		try {
 			const response = await this.client.get(this.endpoint, {
